@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>{{getBook()?.title}}</ion-title>
+    <ion-button slot="end" fill="clear" shape="round">
+      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="top-section">
+    <img class="cover" [src]="getBook()?.cover" alt="Capa do livro" />
+    <div class="ratings">
+      <div class="global-ratings">
+        <span class="rating-label">average</span>
+        <div class="score-row">
+          <span class="rating-value">{{getBook()?.global}}</span>
+          <ion-icon name="star-outline"></ion-icon>
+        </div>
+      </div>
+      @if (getBook()?.userInteraction?.status !== BookStatus.Nenhum) {
+        <span class="rating-label">pessoal</span>
+        <span class="rating-value user-score">{{getBook()?.userInteraction?.score}}</span>
+        <span class="user-badge">{{getBook()?.userInteraction?.status}}</span>
+        <span class="user-progress">página {{getBook()?.userInteraction?.actualPageNumber}}</span>
+      }
+    </div>
+  </div>
+
+  <div class="details">
+    <p><strong>Nome:</strong> {{getBook()?.title}}</p>
+    <p><strong>Autor:</strong> {{getBook()?.author}}</p>
+    <p><strong>Editora:</strong> {{getBook()?.publisher}}</p>
+    <p><strong>Ano:</strong> {{getBook()?.year}}</p>
+    <p><strong>Género:</strong> {{getBook()?.genre}}</p>
+    <p><strong>Sinopse:</strong> {{getBook()?.description}}</p>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

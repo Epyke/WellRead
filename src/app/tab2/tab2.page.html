@@ -5,7 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <swiper-container>
-    <swiper-slide></swiper-slide>
+  <swiper-container slides-per-view="3.5" space-between="0" free-mode="true">
+    @for (status of getBookStatus(); track status) {
+      @if (status !== '') {
+        <swiper-slide>
+          <ion-button shape="round"> {{ status }}</ion-button>
+        </swiper-slide>
+      }
+    }
   </swiper-container>
 </ion-content>

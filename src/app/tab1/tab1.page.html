@@ -7,9 +7,10 @@
 <ion-content [fullscreen]="true">
   <div class="search-block">
     <ion-searchbar class="searchbar" placeholder="Pesquisar"></ion-searchbar>
-    <ion-button class="filter" shape="round">
+    <ion-button class="filter" id="filter" shape="round">
       <ion-icon slot="icon-only" name="filter"></ion-icon>
     </ion-button>
+    <ion-action-sheet trigger="filter" header="Actions" [buttons]="getActionSheetButtons()"></ion-action-sheet>
   </div>
   
   <div>
@@ -17,9 +18,9 @@
       Populares
     </ion-title>
     <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
-      @for (book of books; track book.title) {
+      @for (book of getBooks(); track book.title) {
         <swiper-slide>
-          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+          <book-card [id]="book.id" [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
         </swiper-slide>
       }
     </swiper-container>
@@ -30,9 +31,9 @@
       Recentes
     </ion-title>
     <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
-      @for (book of books; track book.title) {
+      @for (book of getBooks(); track book.title) {
         <swiper-slide>
-          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+          <book-card [id]="book.id" [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
         </swiper-slide>
       }
     </swiper-container>
@@ -43,9 +44,9 @@
       Recomendados
     </ion-title>
     <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
-      @for (book of books; track book.title) {
+      @for (book of getBooks(); track book.title) {
         <swiper-slide>
-          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+          <book-card [id]="book.id" [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
         </swiper-slide>
       }
     </swiper-container>
