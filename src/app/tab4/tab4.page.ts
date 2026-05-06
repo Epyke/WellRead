@@ -5,12 +5,12 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { calendarOutline, locationOutline, mailOutline } from 'ionicons/icons';
-
+import { CustomToolbarComponent } from '../components/custom-toolbar/custom-toolbar.component';
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonAvatar, IonList, IonItem, IonLabel, IonIcon],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonAvatar, IonList, IonItem, IonLabel, IonIcon, CustomToolbarComponent],
 })
 export class Tab4Page {
   constructor() {

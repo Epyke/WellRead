@@ -1,10 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      WellRead
-    </ion-title>
+    <custom-toolbar></custom-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <swiper-container slides-per-view="3.5" space-between="0" free-mode="true">
+    @for (status of getBookStatus(); track status) {
+      @if (status !== '') {
+        <swiper-slide>
+          <ion-button shape="round"> {{ status }}</ion-button>
+        </swiper-slide>
+      }
+    }
+  </swiper-container>
 </ion-content>
