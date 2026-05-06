@@ -1,16 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      WellRead
-    </ion-title>
+    <custom-toolbar></custom-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Pesquisar"></ion-searchbar>
+  <div class="search-block">
+    <ion-searchbar class="searchbar" placeholder="Pesquisar"></ion-searchbar>
+    <ion-button class="filter" shape="round">
+      <ion-icon slot="icon-only" name="filter"></ion-icon>
+    </ion-button>
+  </div>
+  
   <div>
     <ion-title>
-      Livros
+      Populares
     </ion-title>
+    <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
+      @for (book of books; track book.title) {
+        <swiper-slide>
+          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+  <div>
+    <ion-title>
+      Recentes
+    </ion-title>
+    <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
+      @for (book of books; track book.title) {
+        <swiper-slide>
+          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+  <div>
+    <ion-title>
+      Recomendados
+    </ion-title>
+    <swiper-container slides-per-view="2.2" space-between="8" free-mode="true">
+      @for (book of books; track book.title) {
+        <swiper-slide>
+          <book-card [title]="book.title" [cover]="book.cover" [author]="book.author"></book-card>
+        </swiper-slide>
+      }
+    </swiper-container>
   </div>
 </ion-content>
