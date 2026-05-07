@@ -1,2 +1,48 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+	--ion-color-pretoescuro: #212121;
+	--ion-color-pretoescuro-rgb: 33,33,33;
+	--ion-color-pretoescuro-contrast: #ffffff;
+	--ion-color-pretoescuro-contrast-rgb: 255,255,255;
+	--ion-color-pretoescuro-shade: #1d1d1d;
+	--ion-color-pretoescuro-tint: #373737;
+
+    --ion-color-azulclaro: #385cfc;
+	--ion-color-azulclaro-rgb: 56,92,252;
+	--ion-color-azulclaro-contrast: #ffffff;
+	--ion-color-azulclaro-contrast-rgb: 255,255,255;
+	--ion-color-azulclaro-shade: #3151de;
+	--ion-color-azulclaro-tint: #4c6cfc;
+
+    --ion-background-color: var(--ion-color-pretoescuro);
+    --ion-background-color-rgb: var(--ion-color-pretoescuro-rgb);
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+
+    --ion-color-primary: var(--ion-color-azulclaro);
+    --ion-color-primary-rgb: var(--ion-color-azulclaro-rgb);
+    --ion-color-primary-contrast: var(--ion-color-azulclaro-contrast);
+    --ion-color-primary-contrast-rgb: var(--ion-color-azulclaro-contrast-rgb);
+    --ion-color-primary-shade: var(--ion-color-azulclaro-shade);
+    --ion-color-primary-tint: var(--ion-color-azulclaro-tint);
+
+    --ion-toolbar-background: var(--ion-color-pretoescuro);
+    --ion-item-background: var(--ion-color-pretoescuro);
+}
+
+.ion-color-pretoescuro {
+	--ion-color-base: var(--ion-color-pretoescuro);
+	--ion-color-base-rgb: var(--ion-color-pretoescuro-rgb);
+	--ion-color-contrast: var(--ion-color-pretoescuro-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-pretoescuro-contrast-rgb);
+	--ion-color-shade: var(--ion-color-pretoescuro-shade);
+	--ion-color-tint: var(--ion-color-pretoescuro-tint);
+}
+
+.ion-color-azulclaro {
+	--ion-color-base: var(--ion-color-azulclaro);
+	--ion-color-base-rgb: var(--ion-color-azulclaro-rgb);
+	--ion-color-contrast: var(--ion-color-azulclaro-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-azulclaro-contrast-rgb);
+	--ion-color-shade: var(--ion-color-azulclaro-shade);
+	--ion-color-tint: var(--ion-color-azulclaro-tint);
+}

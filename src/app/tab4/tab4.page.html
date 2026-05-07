@@ -5,32 +5,37 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="author-hero">
-    <ion-avatar class="author-avatar">
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  <div class="hero">
+    <ion-avatar class="avatar">
+      <img alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
     </ion-avatar>
-    <h1 class="author-name">Henrique Siano</h1>
-    <p class="author-role">33393</p>
+    <h1 class="name">Henrique Siano</h1>
+    <p class="id">#33393</p>
   </div>
 
-  <ion-list lines="full" class="author-details">
-    <ion-item>
-      <ion-icon name="calendar-outline" slot="start" color="primary"></ion-icon>
-      <ion-label>
-        28/05/2005
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
-      <ion-label>
-        Barcelos, Portugal
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
-      <ion-label>
-        sianohenrique@gmail.com
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <div class="info-section">
+    <div class="info-item">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <span>28/05/2005</span>
+    </div>
+    <div class="info-item">
+      <ion-icon name="location-outline"></ion-icon>
+      <span>Barcelos, Portugal</span>
+    </div>
+    <div class="info-item">
+      <ion-icon name="mail-outline"></ion-icon>
+      <span>sianohenrique@gmail.com</span>
+    </div>
+  </div>
+
+  <div class="bio-section">
+    <h3 class="bio-title">Biografia</h3>
+    <p class="bio-text">
+      Olá, Sou o Henrique e moro atualmente em Barcelos. Vivi em França, mais especificamente na Córsega, durante 15 anos,
+      onde passei a maior parte da minha adolescência. Por isso, os poucos livros que tenho disponíveis na app
+      são obras francesas que li na escola e que me trazem alguma nostalgia. No entanto, hoje estou muito feliz
+      por viver em Portugal. Descobri o mundo da programação através do Roblox, onde desenvolvia joguinhos,
+      e ocasionalmente também criava alguns bots em Python.
+    </p>
+  </div>
 </ion-content>

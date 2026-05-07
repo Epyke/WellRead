@@ -10,7 +10,7 @@ import { CustomToolbarComponent } from '../components/custom-toolbar/custom-tool
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonAvatar, IonList, IonItem, IonLabel, IonIcon, CustomToolbarComponent],
+  imports: [IonHeader, IonToolbar, IonContent, IonAvatar, IonIcon, CustomToolbarComponent],
 })
 export class Tab4Page {
   constructor() {

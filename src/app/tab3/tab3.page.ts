@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonIcon, IonLabel, IonButton, IonThumbnail } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonToolbar, IonList, IonItem, IonIcon, IonLabel, IonButton, IonThumbnail } from '@ionic/angular/standalone';
 import { CustomToolbarComponent } from '../components/custom-toolbar/custom-toolbar.component';
 import { heart } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './tab3.page.html',
   styleUrls: ['./tab3.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, CustomToolbarComponent, IonList, IonItem, IonIcon, IonLabel, IonButton, IonThumbnail]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, CustomToolbarComponent, IonList, IonItem, IonIcon, IonLabel, IonButton, IonThumbnail]
 })
 export class Tab3Page implements OnInit {
   private books : any[];
@@ -24,8 +24,8 @@ export class Tab3Page implements OnInit {
   ngOnInit() {
   }
 
-  getBooks(){
-    return this.books;
+  getFavoriteBooks(){
+    return this.books.filter(book => book.userInteraction.favorite);
   }
 
   openBook(id: string) {

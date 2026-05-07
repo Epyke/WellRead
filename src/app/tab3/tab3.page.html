@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    @for (book of getBooks(); track book.id) {
+    @for (book of getFavoriteBooks(); track book.id) {
       <ion-item button (click)="openBook(book.id)">
         <ion-thumbnail slot="start" class="book-cover">
           <img [src]="book.cover" />
@@ -14,7 +14,7 @@
         <ion-label>
           <h2>{{ book.title }}</h2>
           <p>{{ book.author }}</p>
-          @if (book.userInteraction.score !== '') {
+          @if (book.userInteraction.score > -1) {
             <p>{{ book.userInteraction.score }}/5</p>
           }
         </ion-label>
