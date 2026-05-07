@@ -5,13 +5,44 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-segment scrollable="true">
+    @for (status of getBookStatus(); track status) {
+      <ion-segment-button [value]="status">
+          <ion-label>{{ status }}</ion-label>
+        </ion-segment-button>
+    }
+  </ion-segment>
+
+  <ion-list>
+    @for (book of getBooks(); track book.id) {
+      <ion-item button (click)="openBook(book.id)">
+        <ion-thumbnail slot="start" class="book-cover">
+          <img [src]="book.cover" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ book.title }}</h2>
+          <p>{{ book.author }}</p>
+          <p>{{ book.userInteraction.score }}/5</p>
+          <p>{{ book.userInteraction.actualPageNumber }}/{{book.totalPages}}</p>
+          <ion-progress-bar type="determinate"></ion-progress-bar>
+        </ion-label>
+        <ion-button slot="end">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-item>
+    }
+  </ion-list>
+
+
+  <!--
   <swiper-container slides-per-view="3.5" space-between="0" free-mode="true">
     @for (status of getBookStatus(); track status) {
-      @if (status !== '') {
-        <swiper-slide>
-          <ion-button shape="round"> {{ status }}</ion-button>
-        </swiper-slide>
-      }
+      <swiper-slide>
+        <ion-segment-button [value]="status">
+          <ion-label>{{ status }}</ion-label>
+        </ion-segment-button>
+      </swiper-slide>
     }
   </swiper-container>
+  -->
 </ion-content>

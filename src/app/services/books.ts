@@ -20,7 +20,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: '',
       actualPageNumber: 0,
 
     }
@@ -41,7 +41,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: '',
       actualPageNumber: 0
     }
   },
@@ -61,7 +61,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: '',
       actualPageNumber: 0
     }
   },
@@ -81,7 +81,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: '',
       actualPageNumber: 0
     }
   }

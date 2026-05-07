@@ -5,6 +5,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <div class="search-block">
     <ion-searchbar class="searchbar" placeholder="Pesquisar"></ion-searchbar>
     <ion-button class="filter" id="filter" shape="round">

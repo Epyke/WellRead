@@ -1,8 +1,8 @@
 export enum BookStatus {
     Nenhum = '',
-    Ler = 'Ler',
-    Acabado = 'Acabado',
-    Pausa = 'Em Pausa',
+    Lendo = 'Lendo',
+    Lido = 'Lido',
     PorLer = 'Por Ler',
+    Pausa = 'Em Pausa',
     Desistido = 'Desistido',
 }

@@ -40,5 +40,11 @@ export class Tab1Page {
   getBooks() {
     return this.books;
   }
+
+  handleRefresh() {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  }
 }
 
