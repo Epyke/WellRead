@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="danger" (click)="cancel()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Editar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="confirm()">Guardar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label class="ion-text-center">{{book.title}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-segment scrollable="true">
+        @for (status of getBookStatus(); track status) {
+        <ion-segment-button [value]="status">
+          <ion-label>{{ status }}</ion-label>
+        </ion-segment-button>
+        }
+      </ion-segment>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Página atual"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Nota X/5"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="danger" (click)="remove()">
+    <ion-label>Remover livro</ion-label>
+    <ion-icon slot="end" name="trash"></ion-icon>
+  </ion-button>
+
+</ion-content>

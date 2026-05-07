@@ -2,8 +2,8 @@
   <ion-toolbar>
     <ion-back-button slot="start"></ion-back-button>
     <ion-title>{{getBook()?.title}}</ion-title>
-    <ion-button slot="end" fill="clear" shape="round">
-      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+    <ion-button slot="end" fill="clear" shape="round" (click)="toggleFavorite()">
+      <ion-icon slot="icon-only" [name]="getIsFavorite() ? 'heart' : 'heart-outline'"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -13,15 +13,18 @@
     <img class="cover" [src]="getBook()?.cover" alt="Capa do livro" />
     <div class="ratings">
       <div class="global-ratings">
-        <span class="rating-label">average</span>
+        <span class="rating-label">global</span>
         <div class="score-row">
           <span class="rating-value">{{getBook()?.global}}</span>
-          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline" size="default"></ion-icon>
         </div>
       </div>
       @if (getBook()?.userInteraction?.status !== BookStatus.Nenhum) {
-        <span class="rating-label">pessoal</span>
-        <span class="rating-value user-score">{{getBook()?.userInteraction?.score}}</span>
+        <span class="rating-label user-score">pessoal</span>
+        <div class="score-row">
+            <span class="rating-value">{{getBook()?.userInteraction?.score}}</span>
+            <ion-icon name="star-outline" size="default"></ion-icon>
+        </div>
         <span class="user-badge">{{getBook()?.userInteraction?.status}}</span>
         <span class="user-progress">página {{getBook()?.userInteraction?.actualPageNumber}}</span>
       }
@@ -38,7 +41,7 @@
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
+    <ion-fab-button (click)="openSheet()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

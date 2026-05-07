@@ -20,7 +20,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: -1,
       actualPageNumber: 0,
 
     }
@@ -41,7 +41,7 @@ export class Books {
     userInteraction: {
       status: BookStatus.Nenhum,
       favorite: false,
-      score: 0,
+      score: -1,
       actualPageNumber: 0
     }
   },
@@ -59,10 +59,10 @@ export class Books {
     global: 4.2,
     description: 'La survie d’un homme seul sur une île déserte.',
     userInteraction: {
-      status: BookStatus.Nenhum,
+      status: BookStatus.Lendo,
       favorite: false,
-      score: 0,
-      actualPageNumber: 0
+      score: 2,
+      actualPageNumber: 10
     }
   },
   {
@@ -79,10 +79,10 @@ export class Books {
     global: 4.6,
     description: 'Un monde où les singes dominent l’humanité.',
     userInteraction: {
-      status: BookStatus.Nenhum,
-      favorite: false,
-      score: 0,
-      actualPageNumber: 0
+      status: BookStatus.Lendo,
+      favorite: true,
+      score: 4,
+      actualPageNumber: 120
     }
   }
   ];
@@ -94,4 +94,9 @@ export class Books {
   getById(id: string) {
     return this.books.find(book => book.id === id);
   }
+
+  updateInteraction(id: string, data: any) {
+  const book = this.books.find(b => b.id === id);
+  if (book) book.userInteraction = { ...book.userInteraction, ...data };
+}
 }

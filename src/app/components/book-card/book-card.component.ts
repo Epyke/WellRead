@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonNav } from '@ionic/angular/standalone';
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'book-card',
   templateUrl: 'book-card.component.html',
   styleUrls: ['book-card.component.scss'],
-  imports: [IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonNav],
+  imports: [IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle],
 })
 export class BookCardComponent {
   @Input() id = '';

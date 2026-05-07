@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonNav, IonBackButton, IonIcon, IonFabButton, IonLabel, IonFab } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonNav, IonBackButton, IonIcon, IonFabButton, IonLabel, IonFab, ModalController } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { Books } from '../services/books';
 import { addIcons } from 'ionicons';
-import { heartOutline, add, starOutline } from 'ionicons/icons';
+import { heartOutline, heart, add, starOutline } from 'ionicons/icons';
 import { BookStatus } from '../models/book-status';
+import { BookInteractionSheetComponent } from '../components/book-interaction-sheet/book-interaction-sheet.component';
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.page.html',
@@ -16,15 +17,37 @@ import { BookStatus } from '../models/book-status';
 })
 export class BookDetailsPage {
   private book: any;
+  private isFavorite: boolean;
   BookStatus = BookStatus;
 
-  constructor(private route: ActivatedRoute, private bookService: Books) {
+  constructor(private route: ActivatedRoute, private bookService: Books, private modalCtrl: ModalController) {
+    this.isFavorite = false;
     const id = this.route.snapshot.paramMap.get('id');
     this.book = this.bookService.getById(id!);
-    addIcons({heartOutline, add, starOutline})
+    addIcons({heartOutline, heart, add, starOutline})
+  }
+
+  async openSheet() {
+  const modal = await this.modalCtrl.create({
+    component: BookInteractionSheetComponent,
+    initialBreakpoint: 0.5,
+    breakpoints: [0, 0.5, 1],
+    componentProps: {
+      book: this.book
+    }
+  });
+  await modal.present();
   }
 
   getBook() {
     return this.book;
+  }
+
+  getIsFavorite(){
+    return this.isFavorite;
+  }
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
   }
 }

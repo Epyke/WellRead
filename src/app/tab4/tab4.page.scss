@@ -1,3 +1,62 @@
-ion-title {
-    text-align: center;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 16px;
+  gap: 8px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.id {
+  font-size: 13px;
+  color: gray;
+  margin: 0;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 0 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+
+  ion-icon {
+    font-size: 18px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.bio-section {
+  padding: 16px;
+}
+
+.bio-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.bio-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
 }
